@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./index.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'body': ['Inconsolata', 'monospace']
+      }
+    },
   },
   plugins: [],
 }
