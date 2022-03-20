@@ -39,7 +39,7 @@ Build the project by running:
 
 ## Claps Claps
 
-I'd like to thank the developers of [Alpine.JS](https://alpinejs.dev/) and [Tailwind CSS](https://tailwindcss.com/). Tools like thse are making the real change in web development universe.
+I'd like to thank the developers of [Alpine.JS](https://alpinejs.dev/) and [Tailwind CSS](https://tailwindcss.com/). Tools like these are making the real change in web development universe.
 
 - [Caleb Porzio](https://github.com/calebporzio) - Alpine.JS
 - [Adam Wathan](https://github.com/adamwathan) - Tailwind CSS
