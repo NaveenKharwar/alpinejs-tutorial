@@ -1,0 +1,20 @@
+{
+  "name": "alpinejs-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./src/style.css -o ./dist/main.css --watch",
+    "build": "npx tailwindcss -i ./src/style.css -o ./dist/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaveenKharwar/alpinejs-tutorial.git"
+  },
+  "author": "Naveen Kharwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NaveenKharwar/alpinejs-tutorial/issues"
+  },
+  "homepage": "https://github.com/NaveenKharwar/alpinejs-tutorial#readme"
+}
