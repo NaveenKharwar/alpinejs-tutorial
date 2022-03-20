@@ -1,11 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS  -->
+    <link rel="stylesheet" href="dist/main.css" />
+    <!-- Alpine JS -->
+    <!-- Inconsolata Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.9.1/dist/cdn.min.js"
+    ></script>
+    <title>Alpine + TailwindCSS</title>
+  </head>
+  <body class="lg:w-6/12 w-full mx-auto p-14 font-body">
+    <nav
+      x-data="{ navigation: false, home: 'Home 🙂', about: 'About 📖', services: 'Services ⚙️', contact: 'Contact ✉️' }"
+    >
+      <div class="flex justify-between items-center flex-row">
+        <div class="bg-orange-500 md:px-5 px-3 py-2">
+          <h1 class="md:text-2xl text-lg font-bold text-white">@iPankajKr</h1>
+        </div>
+        <!--   Navigation for desktop -->
+        <ul class="hidden lg:flex gap-6 flex-wrap flex-col lg:flex-row">
+          <li>
+            <a class="text-xl hover:underline" href="#" x-text="home"></a>
+          </li>
+          <li>
+            <a class="text-xl hover:underline" href="#" x-text="about"></a>
+          </li>
+          <li>
+            <a class="text-xl hover:underline" href="#" x-text="services"></a>
+          </li>
+          <li>
+            <a class="text-xl hover:underline" href="#" x-text="contact"></a>
+          </li>
+        </ul>
+        <button
+          class="block lg:hidden uppercase font-bold text-2xl"
+          x-on:click="navigation = ! navigation"
+        >
+          Menu ✨
+        </button>
+      </div>
+      <!--   Navigation for phone -->
+      <ul
+        class="flex lg:hidden gap-3 flex-wrap flex-col lg:flex-row mt-5"
+        x-show="navigation"
+      >
+        <li class="text-right">
+          <a class="text-xl" href="#" x-text="home"></a>
+        </li>
+        <li class="text-right">
+          <a class="text-xl" href="#" x-text="about"></a>
+        </li>
+        <li class="text-right">
+          <a class="text-xl" href="#" x-text="services"></a>
+        </li>
+        <li class="text-right">
+          <a class="text-xl" href="#" x-text="contact"></a>
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <div class="grid gap-4 grid-cols-1 lg:grid-cols-2 py-10">
+        <div>
+          <img src="https://avatars.githubusercontent.com/u/26865827?v=4" />
+        </div>
+        <div>
+          <h2 class="font-semibold text-xl pb-6">I'm Pankaj Kumar</h2>
+          <p class="pb-5">
+            Pankaj is a Developer from Bihar ❤️. He likes to explore front end
+            technologies. Currently, he is learing ReactJS and Headless CMS.
+          </p>
+          <p class="pb-5">
+            Apart from Development, He likes to explore mauntains of Dehradun
+            and enjoy memes.
+          </p>
+          <p class="pb-5">
+            He is a <a class="underline text-green-600 chaipati" href="#">chaipati</a> of our
+            group.
+            <img
+              class="hidden top-0 left-0 h-screen max-w-[100vw] w-[100vw] object-cover fixed the-chaipati"
+              src="https://media.wired.com/photos/5ed81e2a9037c803a68d3b91/4:3/w_2132,h_1599,c_limit/Science_cannabis_912188764.jpg"
+              alt="ChaiPati"
+            />
+          </p>
+          <ul class="flex gap-5">
+            <li><a class="underline" href="#">Twitter</a></li>
+            <li><a class="underline" href="#">Github</a></li>
+            <li><a class="underline" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div
+        class="grid gap-4 grid-cols-1 grid-rows-1"
+        x-data="{
+            faq: [
+                {id: 1, question: 'How many years of experience does he have?', answer: 'Pankaj has 3+ Years of experience in WordPress Development.'},
+                {id: 1, question: 'Does he knows cooking?', answer: 'Yes, he is an expert in making ChaiPati.'},
+                {id: 1, question: 'What does he cost?', answer: 'Subah aur Sham ka Khana aur raat ki daru and he is all yours.'},
+            ]
+        }"
+      >
+      <h3 class="font-semibold text-xl capitalize">frequently asked questions</h3>
+        <template x-for="faqs in faq">
+          <div
+            x-data="{ open: false }"
+            class="border-solid border border-black rounded-md p-5"
+          >
+            <button class="w-full" @click="open = ! open">
+              <span class="flex gap-3 justify-between font-bold">
+                <span class="text-left" x-text="faqs.question"></span>
+                <span class="text-right" x-show="!open">+</span>
+                <span class="text-right" x-show="open">-</span>
+              </span>
+            </button>
+            <div x-show="open" x-transition>
+              <p class="pt-5" x-text="faqs.answer"></p>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+  </body>
 </html>
